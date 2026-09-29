@@ -408,6 +408,61 @@
             font-family: 'Fira Code', monospace;
         }
 
+        /* Project Cards */
+        .project-card {
+            text-decoration: none;
+            color: inherit;
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+        }
+
+        .project-card:hover h3 {
+            color: var(--accent-neon);
+            transition: color 0.3s;
+        }
+
+        .project-card .project-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+
+        .project-card .project-header i.main-icon {
+            font-size: 2.2rem;
+            color: var(--accent-cyan);
+            margin-bottom: 0;
+        }
+
+        .project-card .project-header i.ext-icon {
+            font-size: 1.1rem;
+            color: var(--text-muted);
+            transition: all 0.3s ease;
+            margin-bottom: 0;
+        }
+
+        .project-card:hover .project-header i.ext-icon {
+            color: var(--accent-neon);
+            transform: translate(3px, -3px);
+        }
+
+        .project-card .project-footer {
+            margin-top: auto;
+            padding-top: 20px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            color: var(--accent-neon);
+            font-family: 'Fira Code', monospace;
+            font-size: 0.85rem;
+            transition: gap 0.3s ease;
+        }
+
+        .project-card:hover .project-footer {
+            gap: 12px;
+        }
+
         .social-icon {
             display: flex;
             align-items: center;
@@ -485,6 +540,16 @@
         }
         body[dir="rtl"] .cert-icon {
             margin-top: 3px;
+        }
+        body[dir="rtl"] .project-card {
+            text-align: right;
+        }
+        body[dir="rtl"] .project-card:hover .project-header i.ext-icon {
+            transform: translate(-3px, -3px);
+        }
+        body[dir="rtl"] .project-card .project-footer {
+            flex-direction: row-reverse;
+            justify-content: flex-start;
         }
 
         /* Floating Audio Control */
@@ -578,6 +643,7 @@
             <a href="#education" data-i18n="nav-education">.education()</a>
             <a href="#certificates" data-i18n="nav-certs">.certs()</a>
             <a href="#skills" data-i18n="nav-skills">.skills()</a>
+            <a href="#projects" data-i18n="nav-projects">.projects()</a>
             <button id="lang-toggle" onclick="toggleLanguage()" class="lang-btn">العربية</button>
         </div>
     </nav>
@@ -838,7 +904,12 @@
                     <span class="badge">Burp Suite Pro</span>
                     <span class="badge">Metasploit</span>
                     <span class="badge">Cobalt Strike</span>
+                    <span class="badge">PowerShell Empire</span>
+                    <span class="badge">BloodHound</span>
+                    <span class="badge">NetExec</span>
                     <span class="badge">Nmap</span>
+                    <span class="badge">Nessus</span>
+                    <span class="badge">Hydra</span>
                 </div>
             </div>
             <div class="card">
@@ -849,6 +920,9 @@
                     <span class="badge">Snort</span>
                     <span class="badge">CAPA</span>
                     <span class="badge">REMnux</span>
+                    <span class="badge">FlareVM</span>
+                    <span class="badge">PEStudio</span>
+                    <span class="badge">FLOSS</span>
                     <span class="badge">OleDump.py</span>
                     <span class="badge">MITRE ATT&CK</span>
                 </div>
@@ -879,6 +953,72 @@
                     <span class="badge" style="color: var(--accent-cyan); border-color: var(--accent-cyan);" data-i18n="skills-german">German (Basic Usage)</span>
                 </div>
             </div>
+        </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects">
+        <h2 class="section-title" data-i18n="projects-title">Projects</h2>
+        <div class="grid-container">
+            <!-- WinCredEnum -->
+            <a href="https://github.com/king-of-noobsx/winCredEnum" target="_blank" rel="noopener noreferrer" class="card project-card">
+                <div class="project-header">
+                    <i class="fa-solid fa-terminal main-icon"></i>
+                    <i class="fa-solid fa-arrow-up-right-from-square ext-icon"></i>
+                </div>
+                <h3>WinCredEnum</h3>
+                <p data-i18n="proj-wincredenum-desc">Windows Credentials Enumeration and privilege escalation tool developed in PowerShell for security auditing and post-exploitation.</p>
+                <div class="skills-list">
+                    <span class="badge">PowerShell</span>
+                    <span class="badge">Windows</span>
+                    <span class="badge">Privilege Escalation</span>
+                    <span class="badge">Enumeration</span>
+                </div>
+                <div class="project-footer">
+                    <i class="fa-brands fa-github"></i>
+                    <span data-i18n="proj-view-code">View Repository →</span>
+                </div>
+            </a>
+
+            <!-- FWDproject -->
+            <a href="https://github.com/king-of-noobsx/FWDproject" target="_blank" rel="noopener noreferrer" class="card project-card">
+                <div class="project-header">
+                    <i class="fa-solid fa-laptop-code main-icon"></i>
+                    <i class="fa-solid fa-arrow-up-right-from-square ext-icon"></i>
+                </div>
+                <h3>FWDproject</h3>
+                <p data-i18n="proj-fwdproject-desc">Interactive responsive landing page built with modern HTML5, CSS3, and vanilla JavaScript for the Udacity Front-End Web Development track.</p>
+                <div class="skills-list">
+                    <span class="badge">HTML5</span>
+                    <span class="badge">CSS3</span>
+                    <span class="badge">JavaScript</span>
+                    <span class="badge">Responsive UI</span>
+                </div>
+                <div class="project-footer">
+                    <i class="fa-brands fa-github"></i>
+                    <span data-i18n="proj-view-code">View Repository →</span>
+                </div>
+            </a>
+
+            <!-- FWDproject2 -->
+            <a href="https://github.com/king-of-noobsx/FWDproject2" target="_blank" rel="noopener noreferrer" class="card project-card">
+                <div class="project-header">
+                    <i class="fa-solid fa-cloud-sun main-icon"></i>
+                    <i class="fa-solid fa-arrow-up-right-from-square ext-icon"></i>
+                </div>
+                <h3>FWDproject2</h3>
+                <p data-i18n="proj-fwdproject2-desc">Asynchronous Weather-Journal web application utilizing Node.js, Express, and Web APIs to dynamically record and present user weather logs.</p>
+                <div class="skills-list">
+                    <span class="badge">Node.js</span>
+                    <span class="badge">Express.js</span>
+                    <span class="badge">REST API</span>
+                    <span class="badge">Async JS</span>
+                </div>
+                <div class="project-footer">
+                    <i class="fa-brands fa-github"></i>
+                    <span data-i18n="proj-view-code">View Repository →</span>
+                </div>
+            </a>
         </div>
     </section>
 
@@ -1058,6 +1198,7 @@
                 "nav-education": ".education()",
                 "nav-certs": ".certs()",
                 "nav-skills": ".skills()",
+                "nav-projects": ".projects()",
                 "hero-pre": "Hi, my name is",
                 "hero-title": "Amr Mohamed Ragheb.",
                 "hero-subtitle": "I break systems to make them safer.",
@@ -1143,6 +1284,11 @@
                 "skills-arabic": "Arabic (Native)",
                 "skills-english": "English (Full Professional)",
                 "skills-german": "German (Basic Usage)",
+                "projects-title": "Projects",
+                "proj-wincredenum-desc": "Windows Credentials Enumeration and privilege escalation tool developed in PowerShell for security auditing and post-exploitation.",
+                "proj-fwdproject-desc": "Interactive responsive landing page built with modern HTML5, CSS3, and vanilla JavaScript for the Udacity Front-End Web Development track.",
+                "proj-fwdproject2-desc": "Asynchronous Weather-Journal web application utilizing Node.js, Express, and Web APIs to dynamically record and present user weather logs.",
+                "proj-view-code": "View Repository →",
                 "footer-text": "© 2026 // Designed securely for Amr Mohamed Ragheb."
             },
             ar: {
@@ -1152,6 +1298,7 @@
                 "nav-education": ".التعليم()",
                 "nav-certs": ".الشهادات()",
                 "nav-skills": ".المهارات()",
+                "nav-projects": ".المشاريع()",
                 "hero-pre": "مرحباً، اسمي",
                 "hero-title": "عمرو محمد راغب.",
                 "hero-subtitle": "أقوم باختراق الأنظمة لجعلها أكثر أماناً.",
@@ -1237,6 +1384,11 @@
                 "skills-arabic": "العربية (اللغة الأم)",
                 "skills-english": "الإنجليزية (احترافية كاملة)",
                 "skills-german": "الألمانية (استخدام أساسي)",
+                "projects-title": "المشاريع",
+                "proj-wincredenum-desc": "أداة لتعداد بيانات الاعتماد وتصعيد الصلاحيات لأنظمة ويندوز مطورة بلغة PowerShell لعمليات التدقيق الأمني ومرحلة ما بعد الاستغلال.",
+                "proj-fwdproject-desc": "صفحة هبوط تفاعلية ومتجاوبة تم بناؤها باستخدام HTML5 و CSS3 و JavaScript كجزء من برنامج تطوير واجهات الويب من يوداسيتي.",
+                "proj-fwdproject2-desc": "تطبيق ويب لتسجيل اليوميات وحالة الطقس غير متزامن باستخدام Node.js و Express و Web APIs لتسجيل وتحديث بيانات الطقس ديناميكياً.",
+                "proj-view-code": "عرض المستودع ←",
                 "footer-text": "© 2026 // تم التصميم بشكل آمن لعمرو محمد راغب."
             }
         };
